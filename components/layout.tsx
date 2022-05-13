@@ -9,10 +9,14 @@ import Link from 'next/link';
 const name = 'Harry';
 export const siteTitle = 'Next.js Sample Website';
 
-export default function Layout({ children, home }) {
+export default function Layout({
+  children,
+  home
+}: {
+  children: React.ReactNode
+  home?: boolean
+}) {
 
-  console.log('childer: ', children);
-  console.log('home: ', home);
   return (
     <div className={styles.container}>
       <Head>
@@ -66,7 +70,7 @@ export default function Layout({ children, home }) {
         )}
       </header>
       <main className={cn({
-        [success.success]: home ===  true,
+        [success.success]: home === true,
         [success.error]: home === undefined
       })}>{children}</main>
       {!home && (

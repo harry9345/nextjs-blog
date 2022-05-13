@@ -15,8 +15,16 @@ export async function getStaticProps() {
   };
 }
 
-const Home = ({ allPostData }) => {
-  console.log('all post : ', allPostData);
+const  Home = ({
+  allPostData
+}: {
+  allPostData: {
+    date: string
+    title: string
+    id: string
+  }[]
+}) => {
+  
   return (
     <Layout home >
       <Head>
